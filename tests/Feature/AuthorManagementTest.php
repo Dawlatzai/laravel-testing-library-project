@@ -21,7 +21,7 @@ class AuthorManagementTest extends TestCase
 
         $response = $this->post('/author', [
             'name' => 'Dawlatzai', 
-            'dob' => '1998/11/01'
+            'dob' => '01/11/1988'
         ]);
 
         $author = Author::all();
@@ -30,7 +30,7 @@ class AuthorManagementTest extends TestCase
 
         $this->assertInstanceOf(Carbon::class, $author->first()->dob);
 
-        // $this->assertEquals('01/21/1999', $author->first()->dob->format('m/d/Y'));
+        $this->assertEquals('1988/11/01', $author->first()->dob->format('Y/d/m'));
 
     }
     
