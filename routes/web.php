@@ -20,3 +20,5 @@ Route::delete('books/{book}', 'App\Http\Controllers\BooksController@destroy');
 Route::post('author', 'App\Http\Controllers\AuthorsController@store');
 
 Route::post('checkout/{book}', 'App\Http\Controllers\CheckoutBookController@store');
+
+Route::get('/login', function(){})->name('login');
